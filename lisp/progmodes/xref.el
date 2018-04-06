@@ -352,9 +352,14 @@ elements is negated."
 (defvar xref--marker-ring (make-ring xref-marker-ring-length)
   "Ring of markers to implement the marker stack.")
 
+;;;###autoload
 (defun xref-push-marker-stack (&optional m)
   "Add point M (defaults to `point-marker') to the marker stack."
-  (ring-insert xref--marker-ring (or m (point-marker))))
+  (interactive)
+  (ring-insert xref--marker-ring (or m (point-marker)))
+  ; If called interactively, output a message for the user
+  (when (called-interactively-p 'any)
+        (message "xref marker set for current position.")))
 
 ;;;###autoload
 (defun xref-pop-marker-stack ()

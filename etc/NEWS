@@ -345,6 +345,12 @@ when the PGP keyring contains a public key for every recipient.  To
 achieve this, add 'message-add-encrypt-tag-if-can-encrypt' to
 'message-send-hook'.
 
+** Xref
+++++
+*** You can now call 'xref-push-marker-stack' interactively to push
+the current point to the xref marker stack.  This can be used to mark
+interesting places that you want to visit later using 'xref-pop-marker-stack'.
+
 * New Modes and Packages in Emacs 27.1
 
 +++
